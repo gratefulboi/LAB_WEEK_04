@@ -7,6 +7,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.*
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -27,7 +28,11 @@ class MainActivity : AppCompatActivity() {
             ), findViewById(R.id.drawer_layout)
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
+
         findViewById<NavigationView>(R.id.nav_view)
+            ?.setupWithNavController(navController)
+
+        findViewById<BottomNavigationView>(R.id.bottom_nav)
             ?.setupWithNavController(navController)
     }
 
